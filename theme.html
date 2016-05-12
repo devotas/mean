@@ -355,7 +355,7 @@ ol.notes li.note blockquote a {
         {block:Posts}
 
         {block:Text}
-          <article class="post text {block:IndexPage}col-md-4{/block:IndexPage} text-center">
+          <article class="post text {block:IndexPage}col-md-4{/block:IndexPage} text-center {block:PermalinkPage}col-md-12{/block:PermalinkPage}">
             {block:Title}
             <header>
              <a href="{Permalink}" class="textpost"> <h2 class="entry-title">{Title}</h2></a>
@@ -369,7 +369,7 @@ ol.notes li.note blockquote a {
         {/block:Text}
 
         {block:Photo}
-          <article class="post photo {block:IndexPage}col-md-4{/block:IndexPage} text-center">
+          <article class="post photo {block:IndexPage}col-md-4{/block:IndexPage} text-center {block:PermalinkPage}col-md-12{/block:PermalinkPage}">
             <figure>
               
                 {block:IndexPage}<a href="{Permalink}">
@@ -392,7 +392,7 @@ ol.notes li.note blockquote a {
         {/block:Photo}
 
         {block:Photoset}
-          <article class="post photoset {block:IndexPage}col-md-4{/block:IndexPage} text-center">
+          <article class="post photoset {block:IndexPage}col-md-4{/block:IndexPage} text-center {block:PermalinkPage}col-md-12{/block:PermalinkPage}">
             <figure>
              {block:IndexPage}{Photoset-250}{/block:IndexPage}
               {block:PermalinkPage}{Photoset-500}{/block:PermalinkPage}
@@ -407,7 +407,7 @@ ol.notes li.note blockquote a {
         {/block:Photoset}
 
         {block:Quote}
-          <article class="post quote {block:IndexPage}col-md-4{/block:IndexPage} text-center">
+          <article class="post quote {block:IndexPage}col-md-4{/block:IndexPage} text-center {block:PermalinkPage}col-md-12{/block:PermalinkPage}">
             <blockquote>{Quote}</blockquote>
             {block:Source}
               <footer><h4>{Source}</h4></footer>
@@ -415,7 +415,7 @@ ol.notes li.note blockquote a {
         {/block:Quote}
 
         {block:Link}
-          <article class="post link {block:IndexPage}col-md-4{/block:IndexPage} text-center">
+          <article class="post link {block:IndexPage}col-md-4{/block:IndexPage} text-center {block:PermalinkPage}col-md-12{/block:PermalinkPage}">
             <header>
               <h2>
                 <a href="{URL}" {Target}>{Name}</a>
@@ -427,7 +427,7 @@ ol.notes li.note blockquote a {
         {/block:Link}
 
         {block:Chat}
-          <article class="post chat {block:IndexPage}col-md-4{/block:IndexPage} text-center">
+          <article class="post chat {block:IndexPage}col-md-4{/block:IndexPage} text-center {block:PermalinkPage}col-md-12{/block:PermalinkPage}">
             {block:Title}
             <header>
               <h2>{Title}</h2>
@@ -446,7 +446,7 @@ ol.notes li.note blockquote a {
         {/block:Chat}
 
         {block:Audio}
-          <article class="post audio {block:IndexPage}col-md-4{/block:IndexPage} text-center">
+          <article class="post audio {block:IndexPage}col-md-4{/block:IndexPage} text-center {block:PermalinkPage}col-md-12{/block:PermalinkPage}">
             <header>
               <h2>
                 {block:Artist}
@@ -471,7 +471,7 @@ ol.notes li.note blockquote a {
         {/block:Audio}
 
         {block:Video}
-          <article class="post video {block:IndexPage}col-md-4{/block:IndexPage} text-center">
+          <article class="post video {block:IndexPage}col-md-4{/block:IndexPage} text-center {block:PermalinkPage}col-md-12{/block:PermalinkPage}">
             <figure>
               {block:IndexPage}{Video-250}{/block:IndexPage}
               {block:PermalinkPage}{Video-500}{/block:PermalinkPage}
@@ -485,7 +485,7 @@ ol.notes li.note blockquote a {
         {/block:Video}
 
         {block:Answer}
-          <article class="post answer {block:IndexPage}col-md-4{/block:IndexPage} text-center">
+          <article class="post answer {block:IndexPage}col-md-4{/block:IndexPage} text-center {block:PermalinkPage}col-md-12{/block:PermalinkPage}">
             <dl class="dl-horizontal">
               <dt><img src="{AskerPortraitURL-16}"> {lang:Asker asked 2}: </dt>
               <dd class="text-left">{Question}</dd>
