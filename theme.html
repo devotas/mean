@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+     <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
+    {block:Description}
+    <meta name="description" content="{MetaDescription}">
+    {/block:Description}
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- Tumblr Theme configuration -->
+    <meta name="color:Background" content="#FFFFFF"/>
+    <meta name="color:Text" content="#404040"/>
+    <meta name="color:Link" content="#202020"/>
+    <meta name="color:Link Hover" content="#202020"/>
+    <meta name="color:Link Visited" content="#202020"/>
+
+    <meta name="font:Site Font" content=""/>
+
+    <meta name="text:Footer Text" content=""/>
+    <meta name="text:Google Analytics ID" content=""/>
+
+    <meta name="image:Header" content=""/>
+
+    <meta name="if:Show Archive" content="1"/>
+    <meta name="if:Show RSS" content="0"/>
+    <meta name="if:Show Search" content="0"/>
+
+    <meta name="if:Use Time Ago" content="0"/>
+    <meta name="if:Use Number Pagination" content="0"/>
+
+    <!-- END Tumblr Theme configuration -->
+
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="apple-touch-icon" href="{PortraitURL-128}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+    <style type="text/css">
+      body{
+        background:{color:Background};
+        font-family:{font:Site Font};
+        color:{color:Text};
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+      a{
+        color:{color:Link};
+      }
+      a:hover{
+        color:{color:Link Hover};
+      }
+      a:visited{
+        color:{color:Link Visited};
+      }
+    article h1, h2, h3, h4, h5, h6 {
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: 300;
+        margin: 30px auto;
+        max-width:70%;;
+    }
+    article h1 {
+    font-size: 16px;
+    }
+    article h2 {
+    font-size: 14px;
+    }
+    article h3 {
+    font-size: 12px;
+    }
+    article h4 {
+    font-size: 11px;
+    }
+    article h5 {
+    font-size: 10px;
+    }
+    article h6 {
+    font-size: 9px;
+    }
+    .date {
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 300;
+    color: {color:Text};
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    }
+    .img-responsive {
+        margin:auto;
+    }
+    .site-title {
+    text-align: center;
+    margin: 25px 0;
+    font-size: 25px;
+    }
+    .site-title a{
+    text-decoration: none;
+    color: {color:Link};
+    }
+    .site-description {
+    text-align: center;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color:{color:Text};
+    }
+    #site-navigation {
+    border-top: 1px solid #bebebe;
+    border-bottom: 1px solid #bebebe;
+    z-index: 9999;
+    margin-bottom:30px;
+    }
+    .main-navigation {
+    clear: both;
+    display: block;
+    float: left;
+    width: 100%;
+    }
+    .main-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    }
+    .main-navigation li {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    }
+    .main-navigation a {
+    display: block;
+    text-decoration: none;
+    font-size: 9px;
+    color: {color:Text};
+    padding: 20px 15px;
+    outline: none;
+    }
+    article div.text {
+    max-width: 860px;
+    margin: 35px auto !important;
+    padding: 0 !important;
+    font-size: 14px !important;
+    }
+    article .text img, article .photo img, article .quote img {
+        max-width:90%;
+        margin:30px auto;
+        display:block;
+    }
+    .toggle-go-back, .tags {
+    font-style: italic;
+    margin-top: 15px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: lowercase;
+    cursor: pointer;
+    max-width: 900px;
+    display: block;
+    margin: 0 auto;
+    text-align: left;
+    height: 0;
+    line-height: 10px;
+    }
+    blockquote {
+    max-width: 860px;
+    margin: 0 auto;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-left: 4px solid #bebebe;
+    padding-left: 3%;
+}
+    {block:IndexPage}
+    .quote img {
+        display:none;
+    }
+    a.textpost {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #bebebe;
+    padding: 15px 20px;
+    margin-top: 60px;
+    max-width: 250px;
+    position: relative;
+    text-decoration: none;
+    color:{color:Link};
+}
+.page-tag h2 {
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom:30px;
+}
+pre {
+    letter-spacing: normal;
+  word-spacing: normal;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+    font-size: 0.8em;
+      margin-top: 4em;
+  margin-bottom: 4em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  padding-left: 2em;
+}
+    {/block:IndexPage}
+ol.notes {
+    padding: 0px;
+    margin: 25px 0px;
+    list-style-type: none;
+    border-bottom: solid 1px #ccc;
+}
+
+ol.notes li.note {
+    border-top: solid 1px #ccc;
+    padding: 10px;
+}
+
+ol.notes li.note img.avatar {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin: auto;
+    margin-right: 10px;
+}
+
+ol.notes li.note span.action {
+    font-style: italic;
+    text-transform: none;
+    font-size: 11px;
+    color: {color:Text};
+}
+
+ol.notes li.note .answer_content {
+    font-weight: normal;
+}
+
+ol.notes li.note blockquote {
+    border-color: #eee;
+    padding: 4px 10px;
+    margin: 10px 0px 0px 25px;
+}
+
+ol.notes li.note blockquote a {
+    text-decoration: none;
+}
+.chat dt, .answer dt {
+    margin: 0;
+    color: {color:Text};
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 10px;
+    vertical-align: 2px;
+}
+.chat dd, .answer dd {
+    text-transform: none;
+    font-style: italic;
+    letter-spacing: 1px;
+    font-size: 11px;
+    margin-bottom:30px;
+}
+.chat dl, .answer dl {
+    display: block;
+    margin: auto;
+    max-width: 500px;
+}
+      {CustomCSS}
+    </style>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+    <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
+    <div class="container-fluid">
+      <!--PAGE HEADER ******************************************************************* -->
+      <header class="site-header">
+      <div class="site-branding">
+        {block:IfHeaderImage}
+          <div id="logo" class="site-title"><a href="/"><img src="{image:Header}" alt="{Title}"/></a></div>
+        {/block:IfHeaderImage}
+        {block:IfNotHeaderImage}
+          <h1 class="site-title"><a href="/">{Title}</a></h1>
+        {/block:IfNotHeaderImage}
+        {block:Description}
+          <h2 id="description" class="site-description">{Description}</h2>
+        {/block:Description}
+        </div>
+        <nav id="site-navigation" class="main-navigation" role="navigation">
+          <ul class="list-inline">
+            {block:HasPages}
+            {block:Pages}
+            <li><a href="{URL}">{Label}</a></li>
+            {/block:Pages}
+            {/block:HasPages}
+            {block:AskEnabled}
+            <li><a href="/ask">{AskLabel}</a></li>
+            {/block:AskEnabled}
+            {block:SubmissionsEnabled}
+            <li><a href="/submit">{SubmitLabel}</a></li>
+            {/block:SubmissionsEnabled}
+            {block:IfShowArchive}
+            <li><a href="/archive">{lang:Archive}</a></li>
+            {/block:IfShowArchive}
+            {block:IfShowRSS}
+            <li><a href="{RSS}">{lang:RSS}</a></li>
+            {/block:IfShowRSS}
+          </ul>
+          {block:IfShowSearch}
+          <form action="/search" method="get" class="search">
+            <input type="text" name="q" placeholder="{lang:Search}">
+          </form>
+          {/block:IfShowSearch}
+        </nav>
+        <div class="page-tag text-center">
+        {block:DayPage}
+          <h2>{Month} {DayOfMonth}, {Year}</h2>
+        {/block:DayPage}
+        {block:TagPage}
+          <h2>Posts {lang:Tagged with} "{Tag}"</h2>
+        {/block:TagPage}
+        {block:SearchPage}
+          <h2>{lang:Found SearchResultCount results for SearchQuery}</h2>
+        {/block:SearchPage}
+        {block:NoSearchResults}
+          <h2>{lang:No posts containing SearchQuery}</h2>
+        {/block:NoSearchResults}
+        </div>
+      </header>
+      <!--PAGE LOOP ******************************************************************* -->
+      <div id="main" role="main" class="row">
+        {block:Posts}
+
+        {block:Text}
+          <article class="post text {block:IndexPage}col-md-4{/block:IndexPage} text-center">
+            {block:Title}
+            <header>
+             <a href="{Permalink}" class="textpost"> <h2 class="entry-title">{Title}</h2></a>
+            </header>
+            {/block:Title}
+            {block:PermalinkPage}
+            <div class="text text-left">
+              {Body}
+            </div>
+            {/block:PermalinkPage}
+        {/block:Text}
+
+        {block:Photo}
+          <article class="post photo {block:IndexPage}col-md-4{/block:IndexPage} text-center">
+            <figure>
+              
+                {block:IndexPage}<a href="{Permalink}">
+                  <img src="{PhotoURL-250}" alt="{PhotoAlt}" class="img-responsive"/>
+                  </a>
+                {/block:IndexPage}
+                {block:PermalinkPage}
+                {LinkOpenTag}
+                  <img src="{PhotoURL-500}" alt="{PhotoAlt}" class="img-responsive"/>
+                {LinkCloseTag}
+                {/block:PermalinkPage}
+             
+              {block:Caption}
+                <figcaption class="text-uppercase">
+                  {block:IndexPage}<h4>{PlaintextCaption}</h4>{/block:IndexPage}
+                  {block:PermalinkPage}<h4>{Caption}</h4>{/block:PermalinkPage}
+                </figcaption>
+              {/block:Caption}
+            </figure>
+        {/block:Photo}
+
+        {block:Photoset}
+          <article class="post photoset {block:IndexPage}col-md-4{/block:IndexPage} text-center">
+            <figure>
+             {block:IndexPage}{Photoset-250}{/block:IndexPage}
+              {block:PermalinkPage}{Photoset-500}{/block:PermalinkPage}
+              
+              {block:Caption}
+                <figcaption class="text-uppercase">
+                  {block:IndexPage}<h4>{PlaintextCaption}</h4>{/block:IndexPage}
+                  {block:PermalinkPage}<h4>{Caption}</h4>{/block:PermalinkPage}
+                </figcaption>
+              {/block:Caption}
+            </figure>
+        {/block:Photoset}
+
+        {block:Quote}
+          <article class="post quote {block:IndexPage}col-md-4{/block:IndexPage} text-center">
+            <blockquote>{Quote}</blockquote>
+            {block:Source}
+              <footer><h4>{Source}</h4></footer>
+            {/block:Source}
+        {/block:Quote}
+
+        {block:Link}
+          <article class="post link {block:IndexPage}col-md-4{/block:IndexPage} text-center">
+            <header>
+              <h2>
+                <a href="{URL}" {Target}>{Name}</a>
+              </h2>
+            </header>
+            {block:Description}
+            <blockquote> {Description} </blockquote>
+            {/block:Description}
+        {/block:Link}
+
+        {block:Chat}
+          <article class="post chat {block:IndexPage}col-md-4{/block:IndexPage} text-center">
+            {block:Title}
+            <header>
+              <h2>{Title}</h2>
+            </header>
+            {/block:Title}
+            <dl class="dl-horizontal">
+              {block:Lines}
+                {block:Label}
+                  <dt class="{Alt} {UserNumber} text-left">
+                    {Label}
+                  </dt>
+                {/block:Label}
+                <dd class="text-left"> {Line} </dd>
+              {/block:Lines}
+            </dl>
+        {/block:Chat}
+
+        {block:Audio}
+          <article class="post audio {block:IndexPage}col-md-4{/block:IndexPage} text-center">
+            <header>
+              <h2>
+                {block:Artist}
+                  {Artist}
+                {/block:Artist}
+-
+                {block:TrackName}
+                  {TrackName}
+                {/block:TrackName}
+              </h2>
+            </header>
+            <figure>
+              {block:IndexPage}{AudioEmbed-250}{/block:IndexPage}
+              {block:PermalinkPage}{AudioEmbed-500}{/block:PermalinkPage}
+              {block:Caption}
+                <figcaption class="text-uppercase">
+                 {block:IndexPage}<h4>{PlaintextCaption}</h4>{/block:IndexPage}
+                  {block:PermalinkPage}<h4>{Caption}</h4>{/block:PermalinkPage}
+                </figcaption>
+              {/block:Caption}
+            </figure>
+        {/block:Audio}
+
+        {block:Video}
+          <article class="post video {block:IndexPage}col-md-4{/block:IndexPage} text-center">
+            <figure>
+              {block:IndexPage}{Video-250}{/block:IndexPage}
+              {block:PermalinkPage}{Video-500}{/block:PermalinkPage}
+              {block:Caption}
+                <figcaption class="text-uppercase">
+                 {block:IndexPage}<h4>{PlaintextCaption}</h4>{/block:IndexPage}
+                  {block:PermalinkPage}<h4>{Caption}</h4>{/block:PermalinkPage}
+                </figcaption>
+              {/block:Caption}
+            </figure>
+        {/block:Video}
+
+        {block:Answer}
+          <article class="post answer {block:IndexPage}col-md-4{/block:IndexPage} text-center">
+            <dl class="dl-horizontal">
+              <dt><img src="{AskerPortraitURL-16}"> {lang:Asker asked 2}: </dt>
+              <dd class="text-left">{Question}</dd>
+                <hr />
+              <dd class="text-left">{Answer}</dd>
+            </dl>
+        {/block:Answer}
+
+            <footer>
+            {block:PermalinkPage}
+              
+              {block:HasTags}
+                <ul class="list-inline date">
+                  {block:Tags}
+                  <li><a href="{TagURL}">#{Tag}</a></li>
+                  {/block:Tags}
+                </ul>
+              {/block:HasTags}
+            {/block:PermalinkPage}
+              {block:Date}
+              <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}">
+              <p class="text-center date">
+                <a href="{Permalink}">
+                  {block:IfUseTimeAgo}
+                    {TimeAgo}
+                  {/block:IfUseTimeAgo}
+                  {block:IfNotUseTimeAgo}
+                    {DayOfMonth} {ShortMonth} {Year}
+                  {/block:IfNotUseTimeAgo}
+                </a>
+                </p>    
+              </time>
+              {/block:Date}
+              
+
+              {block:PermalinkPage}
+              {block:NoteCount}
+                <div class="notes date">{lang:Notes}: {NoteCount}</div>
+              {/block:NoteCount}
+                {block:PostNotes}<div>{PostNotes}</div>{/block:PostNotes}
+              {/block:PermalinkPage}
+            </footer>
+          </article>
+          {block:Post3}
+          </div><div class="row">
+          {/block:Post3}
+        {block:Post6}
+          </div><div class="row">
+          {block:Post6}
+        {/block:Posts}
+      </div>
+      <!--PAGE FOOTER ******************************************************************* -->
+      <footer>
+        {block:PermalinkPagination}
+         <nav id="site-navigation" class="main-navigation" role="navigation">
+         <ul class="list-inline">
+            {block:PreviousPost}<li><a href="{PreviousPost}">« {lang:Previous}</a></li>{/block:PreviousPost}
+            {block:NextPost}<li><a href="{NextPost}" >{lang:Next} »</a></li>{/block:NextPost}
+          </nav>
+        {/block:PermalinkPagination}
+
+        {block:IndexPage}
+          {block:Pagination}
+           <nav id="site-navigation" class="main-navigation" role="navigation">
+           <ul class="list-inline">
+              {block:PreviousPage}<li><a href="{PreviousPage}">« {lang:Newer}</a></li>{/block:PreviousPage}
+
+              {block:IfUseNumberPagination}
+                {block:JumpPagination length="5"}
+                    {block:CurrentPage}
+                       <li>{PageNumber}</li>
+                    {/block:CurrentPage}
+                    {block:JumpPage}
+                        <li><a href="{URL}">{PageNumber}</a></li>
+                    {/block:JumpPage}
+                {/block:JumpPagination}
+              {/block:IfUseNumberPagination}
+
+              {block:NextPage}<li><a href="{NextPage}">{lang:Older} »</a></li>{/block:NextPage}
+            </nav>
+          {/block:Pagination}
+        {/block:IndexPage}
+        <h2 class="site-description">{text:Footer Text}</h2>
+        <div style="height:100px"></div>
+      </footer>
+    </div>
+    {block:IfGoogleAnalyticsID}
+    <script>
+      var _gaq=[['_setAccount','{text:Google Analytics ID}'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+    {/block:IfGoogleAnalyticsID}
+    <script src="https://use.fontawesome.com/256bebaf00.js"></script>
+  </body>
+</html>
